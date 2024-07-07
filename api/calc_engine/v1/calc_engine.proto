@@ -1,0 +1,23 @@
+syntax = "proto3";
+import "google/api/annotations.proto";
+package api.calc_engine.v1;
+
+option go_package = "kratos-project/api/calc_engine/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.calc_engine.v1";
+
+service CalcEngine {
+	rpc getSum (getSumRequest) returns (getSumReply) {
+		option (google.api.http) = {
+			get: "/sum/{a}/{b}"
+		};
+	};
+}
+
+message getSumRequest {
+	int64 a = 1;
+	int64 b = 2;
+}
+message getSumReply {
+	int64 sum = 1;
+}
