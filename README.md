@@ -3,7 +3,8 @@
 consul agent -dev
 ```
 
-## Start calc_engine/calc_engine micro_service
+## Start calc_engine/calc_gateway micro_service
+calc_gateway提供http服务，calc_engine提供gRPC服务，calc_gateway调用calc_engine
 ```
 kratos run
 ```
